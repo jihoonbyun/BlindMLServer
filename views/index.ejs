@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- 탑 네비게이션 바 -->
+<nav class="flex justify-between items-center py-4 bg-blue-500 text-white">
+    <div class="ml-8 text-lg font-semibold">BlindML</div>
+    <div>
+        <% if (loggedIn) { %>
+            <span class="mr-4">Welcome, <%= username %></span>
+            <a href="/logout" class="mr-8">Logout</a>
+        <% } else { %>
+            <a href="/login" class="mr-4">Login</a>
+            <a href="/register" class="mr-8">Register</a>
+        <% } %>
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">Create New</button>
+    </div>
+</nav>
+
+<!-- 왼쪽 네비게이션 메뉴 -->
+<div class="flex">
+    <aside class="w-64 bg-gray-800 text-white h-screen">
+        <ul class="space-y-2 p-2">
+            <li><a href="#" class="block p-2 hover:bg-gray-700">Deployment</a>
+                <ul class="pl-4 space-y-2">
+                    <li><a href="/servers" class="block p-2 hover:bg-gray-700">Servers</a></li>
+                    <li><a href="/notebooks" class="block p-2 hover:bg-gray-700">Logs</a></li>
+                    <li><a href="/datasets" class="block p-2 hover:bg-gray-700">KMS</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="block p-2 hover:bg-gray-700">Repositories</a>
+            </li>
+            <li><a href="/settings" class="block p-2 hover:bg-gray-700">Open Models</a></li>
+            <li><a href="/settings" class="block p-2 hover:bg-gray-700">Settings</a></li>
+            <li><a href="/myaccount" class="block p-2 hover:bg-gray-700">My Account</a></li>
+        </ul>
+    </aside>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="flex-1 p-4">
+        <h1 class="text-xl font-semibold mb-4">Deployed Servers</h1>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow">Room 1</div>
+            <div class="bg-white p-4 rounded-lg shadow">Room 2</div>
+            <div class="bg-white p-4 rounded-lg shadow">Room 3</div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

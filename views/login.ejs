@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/tailwind.css">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto px-4">
+    <h1 class="text-xl font-semibold mb-4">Login</h1>
+    <form action="/users/login" method="POST">
+        <div class="mb-4">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required class="input bg-white border border-gray-400">
+        </div>
+        <div class="mb-4">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required class="input bg-white border border-gray-400">
+        </div>
+        <button type="submit" class="btn bg-blue-500 hover:bg-blue-700 text-white">Login</button>
+    </form>
+</div>
+</body>
+</html>
